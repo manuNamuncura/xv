@@ -1,0 +1,33 @@
+footer {
+  background: var(--rosewood);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 60px 20px;
+  scroll-snap-align: start;
+}
+footer .footer-name {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(24px, 4vw, 36px);
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+footer .footer-date {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--champagne-light);
+  margin-bottom: 24px;
+}
+footer .footer-line {
+  width: 40px;
+  height: 1px;
+  background: var(--champagne);
+  margin: 0 auto 24px;
+}
+footer p {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,153 @@
+.rsvp-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--soft-pink-bg);
+  overflow: hidden;
+}
+.rsvp-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.rsvp-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(30px) brightness(0.85) saturate(0.8);
+  transform: scale(1.1);
+}
+.rsvp-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 240, 245, 0.7);
+}
+.rsvp-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(248, 200, 216, 0.5);
+  border-radius: 24px;
+  padding: clamp(32px, 6vw, 64px);
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+}
+.rsvp-card .label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-bottom: 12px;
+}
+.rsvp-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  color: var(--rosewood);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.rsvp-card .subtitle {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--rosewood-light);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.form-group label {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rosewood-light);
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(232, 160, 180, 0.3);
+  border-radius: 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--rosewood);
+  outline: none;
+  transition: all 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--rose);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 3px rgba(232, 160, 180, 0.15);
+}
+.attendance-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.attendance-option {
+  position: relative;
+}
+.attendance-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.attendance-option label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border: 1px solid rgba(232, 160, 180, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--rosewood-light);
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+.attendance-option input:checked + label {
+  border-color: var(--rose);
+  background: rgba(232, 160, 180, 0.15);
+  color: var(--rosewood);
+}
+.submit-btn {
+  width: 100%;
+  padding: 16px 32px;
+  background: var(--rosewood);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+.submit-btn:hover {
+  background: var(--rosewood-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(92, 55, 76, 0.25);
+}

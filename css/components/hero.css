@@ -1,0 +1,121 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) saturate(1.1);
+  transform: scale(1.1);
+  transition: transform 8s ease-out;
+}
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(92, 55, 76, 0.3) 0%,
+    rgba(92, 55, 76, 0.1) 40%,
+    rgba(92, 55, 76, 0.5) 100%
+  );
+}
+.hero.loaded .hero-bg img {
+  transform: scale(1);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+.hero-sub {
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: heroFadeUp 1s ease 0.5s forwards;
+}
+.hero-name {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(56px, 12vw, 140px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: heroFadeUp 1s ease 0.7s forwards;
+}
+.hero-date {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  opacity: 0;
+  animation: heroFadeUp 1s ease 0.9s forwards;
+}
+.hero-date span {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: heroFadeUp 1s ease 1.4s forwards;
+}
+.scroll-indicator span {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

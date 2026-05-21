@@ -1,0 +1,55 @@
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--soft-pink-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader-initial {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 10vw, 96px);
+  color: var(--rosewood);
+  letter-spacing: -0.04em;
+  opacity: 0;
+  animation: loaderFade 1.8s ease forwards;
+}
+.loader-line {
+  width: 60px;
+  height: 1px;
+  background: var(--champagne);
+  animation: loaderExpand 1.5s ease 0.3s forwards;
+  transform: scaleX(0);
+}
+@keyframes loaderFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+@keyframes loaderExpand {
+  to {
+    transform: scaleX(1);
+  }
+}
